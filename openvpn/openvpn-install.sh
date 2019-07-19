@@ -172,13 +172,13 @@ else
 	if echo "$IP" | grep -qE '^(10\.|172\.1[6789]\.|172\.2[0-9]\.|172\.3[01]\.|192\.168)'; then
 		echo
 		echo "This server is behind NAT. What is the public IPv4 address or hostname?"
-		read -p "Public IP address / hostname: " -e PUBLICIP
+		read -p "Public IP address / hostname: " -e  PUBLICIP
 	fi
 	echo
 	echo "Which protocol do you want for OpenVPN connections?"
 	echo "   1) UDP (recommended)"
 	echo "   2) TCP"
-	read -p "Protocol [1-2]: " -e -i 1 PROTOCOL
+	read -p "Protocol [1-2]: " -e -i 2 PROTOCOL
 	case $PROTOCOL in
 		1) 
 		PROTOCOL=udp
@@ -189,7 +189,7 @@ else
 	esac
 	echo
 	echo "What port do you want OpenVPN listening to?"
-	read -p "Port: " -e -i 1194 PORT
+	read -p "Port: " -e -i 3300 PORT
 	echo
 	echo "Which DNS do you want to use with the VPN?"
 	echo "   1) Current system resolvers"

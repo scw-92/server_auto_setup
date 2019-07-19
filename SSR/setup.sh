@@ -1,3 +1,4 @@
+sed -i "s/char=/# char=/g" shadowsocksR.sh
 chmod 777 shadowsocksR.sh
 ./shadowsocksR.sh <<EOF
 !@#$%^&*()
